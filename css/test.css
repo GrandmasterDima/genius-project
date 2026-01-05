@@ -1,18 +1,17 @@
 * {
   box-sizing: border-box;
 }
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-.box {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 100px;
+.item {
+  flex-basis: 100px;
   height: 100px;
   background-color: #0000ff;
   padding: 10px;
   border: 6px solid green;
   margin: 10px;
-}
-
-.box:nth-child(n + 3) {
-  background-color: #17a41e;
 }
