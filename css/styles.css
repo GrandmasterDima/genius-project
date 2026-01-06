@@ -24,10 +24,12 @@
 }
 
 :root {
-  --color-brand--dark: #465929;
-  --color-brand-light: #819b57;
   --color-primary-dark: #31261a;
   --color-primary-light: #faf4ea;
+  --color-secondary-dark: #a18268;
+  --color-brand--dark: #465929;
+  --color-brand-normal: #819b57;
+  --color-brand-light: #cfcfbc;
 }
 
 /* Base */
@@ -37,6 +39,7 @@
 
 body {
   color: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -87,8 +90,8 @@ ul {
 .button {
   color: var(--color-primary-light);
   font-weight: 600;
-  background-color: var(--color-brand-light);
-  border: 2px solid var(--color-brand-light);
+  background-color: var(--color-brand-normal);
+  border: 2px solid var(--color-brand-normal);
   border-radius: 8px;
   cursor: pointer;
   padding: 16px 32px;
@@ -105,7 +108,7 @@ ul {
   line-height: 1.5;
 }
 .link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
 }
 /* Header */
 .header-container {
@@ -140,6 +143,10 @@ ul {
 /* Hero section */
 .hero-section {
   padding: 272px 0;
+  background-image: url(../images/hero-section-baground.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 
 .hero-title {
@@ -151,13 +158,13 @@ ul {
 }
 
 .hero-title .accent {
-  color: var(--color-brand-light); /* HEX value*/
+  color: var(--color-brand-normal); /* HEX value*/
 }
 
 /* Advantages section */
 .advantages-section {
   padding: 16px 0;
-  background-color: var(--color-brand-light);
+  background-color: var(--color-brand-normal);
 }
 
 .advantages-list {
@@ -174,9 +181,12 @@ ul {
 
 .section-title {
   color: var(--color-primary-dark);
-  font-size: 64;
+  font-size: 64px;
   font-weight: 900;
   line-height: 1.3;
+}
+.section-title.centered {
+  text-align: center;
 }
 
 .section-title span {
@@ -201,7 +211,7 @@ ul {
 }
 
 .traditions-text .brand {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
   font-weight: 600;
 }
 
@@ -213,14 +223,30 @@ ul {
 }
 
 /* Chefs section */
-.chef-title {
-  margin-bottom: 16px;
-  font-size: 40px;
-  font-weight: 600;
+
+.chef-photo {
+  border-radius: 4px 4px 4px 200px;
+  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+    -16px 16px 0 2px var(--color-secondary-dark);
 }
 
 .chefs-title {
-  margin-bottom: 80px;
+  font-weight: 600;
+  max-width: 520px;
+  margin: 0 auto 80px;
+}
+
+.chefs-title::before,
+.chefs-title::after {
+  display: block;
+  width: 352px;
+  border: 2px solid var(--color-primary-light);
+  content: '';
+}
+.chef-title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 40px;
 }
 
 /* Formats-section */
@@ -229,10 +255,18 @@ ul {
   flex-wrap: wrap;
 }
 .format-card {
-  border: 1px solid lightgrey; /*remove*/
-  border-radius: 16px;
+  height: 444px;
   padding: 24px;
+  border-radius: 16px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(49, 38, 26, 0) 55.21%,
+    rgba(49, 38, 26, 0.71) 72.92%,
+    var(--color-primary-dark) 100%
+  );
+  border: 1px solid black;
 }
+
 .formats-list {
   display: flex;
   flex-wrap: wrap;
@@ -249,7 +283,24 @@ ul {
 .formats-title {
   margin-bottom: 80px;
 }
-
+/* Carousel */
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid var(--color-primary-dark);
+  padding: 0;
+  fill: var(--color-primary-dark);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+  fill: var(--color-primary-light);
+}
 /* Contacts section */
 .contact-title {
   margin-bottom: 16px;
@@ -263,9 +314,26 @@ ul {
   text-decoration: none;
 }
 .address-link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-brand-normal);
   text-decoration: none;
 }
+
+.address-icon {
+  fill: var(--color-primary-light);
+}
+
+.address-icon:hover {
+  fill: var(--color-brand-normal);
+}
+
 .address-copyright {
   font-size: 14px;
+}
+
+.footer {
+  background-color: var(--color-primary-dark);
+  background-image: url('../images/footer-baground.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
