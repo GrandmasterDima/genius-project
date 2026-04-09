@@ -6,6 +6,10 @@
     <title>Сучасна пекарня</title>
     <!-- Styles -->
     <link rel="stylesheet" href="./css/main.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <header class="header">
@@ -41,9 +45,19 @@
               </li>
             </ul>
           </nav>
-          <button class="button modal-btn-open" type="button">
+          <button class="header__button button modal-btn-open" type="button">
             Замовити дзвінок
           </button>
+          <button class="header__burger menu-btn-open" type="button">
+            <svg width="24" height="24">
+              <use href="./images/icons.svg#icon-menu"></use>
+            </svg>
+          </button>
+          <div class="mobile-menu">
+            <button class="mobile-menu__btn-close menu-btn-close" type="button">
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -53,6 +67,12 @@
           <h1 class="hero-section__title">
             <span class="text-brand">Сучасна</span> пекарня
           </h1>
+          <button
+            class="hero-section__button button modal-btn-open"
+            type="button"
+          >
+            Замовити дзвінок
+          </button>
         </div>
       </section>
       <section class="advantages-section">
@@ -95,6 +115,8 @@
               </p>
             </div>
             <img
+              class="traditions-section__image"
+              srcset="./images/backer-man.jpg 1x, ./images/backer-man@2x.jpg 2x"
               src="./images/backer-man.jpg"
               alt="Чоловік - пекар дивиться на батони з посмішкою"
             />
@@ -164,66 +186,128 @@
           >
             Формати
           </h2>
-          <div class="formats-section__container">
-            <button class="carousel-button" type="button">
+          <div class="formats-section__slider">
+            <button
+              class="formats-section__button carousel-button prev"
+              type="button"
+            >
               <svg width="16" height="16">
                 <use href="./images/icons.svg#icon-arrow"></use>
               </svg>
             </button>
-            <ul class="formats-section__list">
-              <li class="formats-section__item">
-                <article class="format-card">
-                  <img
-                    class="format-card__image"
-                    src="./images/walrus-format.jpg"
-                    alt="Walrus format"
-                  />
-                  <h3 class="format-card__title" lang="en">Walrus</h3>
-                  <div class="format-card__text">
-                    <p>Площа: до 120 м2</p>
-                    <p>Меню: розширене меню</p>
-                    <p>
-                      Штат: 2 продавці-касири, 2 пекарі, 2 помічники пекаря, 2
-                      офіціанти-різнороби
-                    </p>
-                    <p>Посадкові місця: є</p>
-                  </div>
-                </article>
-              </li>
-              <li class="formats-section__item">
-                <article class="format-card">
-                  <img
-                    class="format-card__image"
-                    src="./images/horseshoe-format.jpg"
-                    alt="Horseshoe format"
-                  />
-                  <h3 class="format-card__title" lang="en">Horseshoe</h3>
-                  <div class="format-card__text">
-                    <p>Площа: до 25 м2</p>
-                    <p>Меню: найпопулярніші позиції меню</p>
-                    <p>Штат: 2продавці-касири, 2 пекарі, 1 помічник пекаря</p>
-                    <p>Посадкові місця:відсутні</p>
-                  </div>
-                </article>
-              </li>
-              <li class="formats-section__item">
-                <article class="format-card">
-                  <img
-                    class="format-card__image"
-                    src="./images/handlebar-format.jpg"
-                    alt="Handlebar format"
-                  />
-                  <h3 class="format-card__title" lang="en">Handlebar</h3>
-                  <div class="format-card__text">
-                    <p>Площа: до 15 м2</p>
-                    <p>Меню: найпопулярніші позиції меню</p>
-                    <p>Штат: 1 продавець, 1 пекар, 1 помічник пекаря</p>
-                    <p>Посадкові місця: відсутні</p>
-                  </div>
-                </article>
-              </li>
-            </ul>
-            <button class="carousel-button next" type="button">
+            <div class="formats-section__container swiper-container">
+              <ul class="formats-section__list swiper-wrapper">
+                <li class="swiper-slide">
+                  <article class="format-card">
+                    <img
+                      class="format-card__image"
+                      src="./images/walrus-format.jpg"
+                      alt="Walrus format"
+                    />
+                    <h3 class="format-card__title" lang="en">Walrus</h3>
+                    <div class="format-card__text">
+                      <p>Площа: до 120 м2</p>
+                      <p>Меню: розширене меню</p>
+                      <p>
+                        Штат: 2 продавці-касири, 2 пекарі, 2 помічники пекаря, 2
+                        офіціанти-різнороби
+                      </p>
+                      <p>Посадкові місця: є</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article class="format-card">
+                    <img
+                      class="format-card__image"
+                      src="./images/horseshoe-format.jpg"
+                      alt="Horseshoe format"
+                    />
+                    <h3 class="format-card__title" lang="en">Horseshoe</h3>
+                    <div class="format-card__text">
+                      <p>Площа: до 25 м2</p>
+                      <p>Меню: найпопулярніші позиції меню</p>
+                      <p>Штат: 2продавці-касири, 2 пекарі, 1 помічник пекаря</p>
+                      <p>Посадкові місця:відсутні</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article class="format-card">
+                    <img
+                      class="format-card__image"
+                      src="./images/handlebar-format.jpg"
+                      alt="Handlebar format"
+                    />
+                    <h3 class="format-card__title" lang="en">Handlebar</h3>
+                    <div class="format-card__text">
+                      <p>Площа: до 15 м2</p>
+                      <p>Меню: найпопулярніші позиції меню</p>
+                      <p>Штат: 1 продавець, 1 пекар, 1 помічник пекаря</p>
+                      <p>Посадкові місця: відсутні</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article class="format-card">
+                    <img
+                      class="format-card__image"
+                      src="./images/handlebar-format.jpg"
+                      alt="Handlebar format"
+                    />
+                    <h3 class="format-card__title" lang="en">Handlebar</h3>
+                    <div class="format-card__text">
+                      <p>Площа: до 15 м2</p>
+                      <p>Меню: найпопулярніші позиції меню</p>
+                      <p>Штат: 1 продавець, 1 пекар, 1 помічник пекаря</p>
+                      <p>Посадкові місця: відсутні</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article class="format-card">
+                    <img
+                      class="format-card__image"
+                      src="./images/handlebar-format.jpg"
+                      alt="Handlebar format"
+                    />
+                    <h3 class="format-card__title" lang="en">Handlebar</h3>
+                    <div class="format-card__text">
+                      <p>Площа: до 15 м2</p>
+                      <p>Меню: найпопулярніші позиції меню</p>
+                      <p>Штат: 1 продавець, 1 пекар, 1 помічник пекаря</p>
+                      <p>Посадкові місця: відсутні</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="swiper-slide">
+                  <article class="format-card">
+                    <img
+                      class="format-card__image"
+                      src="./images/handlebar-format.jpg"
+                      alt="Handlebar format"
+                    />
+                    <h3 class="format-card__title" lang="en">Handlebar</h3>
+                    <div class="format-card__text">
+                      <p>Площа: до 15 м2</p>
+                      <p>Меню: найпопулярніші позиції меню</p>
+                      <p>Штат: 1 продавець, 1 пекар, 1 помічник пекаря</p>
+                      <p>Посадкові місця: відсутні</p>
+                    </div>
+                  </article>
+                </li>
+              </ul>
+              <div class="pagination">
+                <span class="pagination_button"> 1</span>
+                <span class="pagination_button"> 2 </span>
+                <span class="pagination_button"> 3 </span>
+                <span class="pagination_button"> 4 </span>
+              </div>
+            </div>
+            <button
+              class="formats-section__button carousel-button next"
+              type="button"
+            >
               <svg width="16" height="16">
                 <use href="./images/icons.svg#icon-arrow"></use>
               </svg>
@@ -305,14 +389,14 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <div class="footer-container">
-          <nav class="footer-nav">
-            <div class="footer-logo">
+        <div class="footer__container">
+          <nav class="footer__nav">
+            <div class="footer__logo">
               <a href="#">
                 <img src="./images/logo.svg" alt="Логотип сучасної пекарні" />
               </a>
             </div>
-            <ul class="footer-menu">
+            <ul class="footer__menu">
               <li>
                 <a class="link" href="#traditions-section">Наші традиції</a>
               </li>
@@ -321,53 +405,56 @@
               <li><a class="link" href="#contact-section">Контакти</a></li>
             </ul>
           </nav>
-          <address class="footer-address">
-            <ul class="address-list">
-              <li>
-                <a class="address-link" href="tel:+380960000007"
-                  >+ 38 (096) 000 00 07</a
-                >
-              </li>
-              <li>
-                <a class="address-link" href="mailto:shopbakery@gmail.com"
-                  >shopbakery@gmail.com</a
-                >
-              </li>
-              <li>
-                <a
-                  class="address-link"
-                  href="https://maps.app.goo.gl/y49aso4orv5aacXa8"
-                  target="_blank"
-                  >Україна, м. Київ, вул. Січових Стрільців 54</a
-                >
-              </li>
-              <li>
+          <address class="footer__address">
+            <div class="footer__address-contacts">
+              <ul class="footer__address-list">
+                <li>
+                  <a class="footer__address-link" href="tel:+380960000007"
+                    >+ 38 (096) 000 00 07</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer__address-link"
+                    href="mailto:shopbakery@gmail.com"
+                    >shopbakery@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer__address-link"
+                    href="https://maps.app.goo.gl/y49aso4orv5aacXa8"
+                    target="_blank"
+                    >Україна, м. Київ, вул. Січових Стрільців 54</a
+                  >
+                </li>
+              </ul>
+              <div>
                 <a href="#">
-                  <svg class="address-icon" width="32" height="32">
+                  <svg class="footer__address-icon" width="32" height="32">
                     <use href="./images/icons.svg#icon-facebook"></use>
                   </svg>
                 </a>
-              </li>
-              <li>
                 <a href="#">
-                  <svg class="address-icon" width="32" height="32">
+                  <svg class="footer__address-icon" width="32" height="32">
                     <use href="./images/icons.svg#icon-instagram"></use>
                   </svg>
                 </a>
-              </li>
-            </ul>
-            <div class="address-info">
-              <a class="address-link" href="#" target="_blank"
+              </div>
+            </div>
+
+            <div class="footer__address-info">
+              <a class="footer__address-link" href="#" target="_blank"
                 >Політика конфіденційності</a
               >
-              <p class="address-copyright">&copy; 2025 Дані захищені</p>
+              <p class="footer__address-copyright">&copy; 2025 Дані захищені</p>
             </div>
           </address>
         </div>
       </div>
     </footer>
 
-    <div class="backdrop">
+    <div class="backdrop is-hidden">
       <div class="modal">
         <button class="modal__btn-close modal-btn-close" type="button">
           Close
@@ -429,5 +516,8 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./js/formats-slider.js"></script>
   </body>
 </html>
